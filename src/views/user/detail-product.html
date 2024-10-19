@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/user/detail-product.css">
+    <link rel="icon" type="image/x-icon" href="/public/flower-icon.png">
+    <title>Product Detail</title>
+</head>
+
+<body>
+    <header class="hd-navbar">
+        <div class="navbar">
+            <div class="container-logo-opt">
+                <a class="brand-logo" href="index.html" title="Home">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-flower">
+                        <circle cx="12" cy="12" r="3" />
+                        <path
+                            d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5" />
+                        <path d="M12 7.5V9" />
+                        <path d="M7.5 12H9" />
+                        <path d="M16.5 12H15" />
+                        <path d="M12 16.5V15" />
+                        <path d="m8 8 1.88 1.88" />
+                        <path d="M14.12 9.88 16 8" />
+                        <path d="m8 16 1.88-1.88" />
+                        <path d="M14.12 14.12 16 16" />
+                    </svg>
+                    <span class="brand-name">HoaViet</span>
+                </a>
+                <nav class="menu-container">
+                    <div class="navbar-menu">
+                        <ul class="option-menu">
+                            <li>
+                                <a href="index.html" title="Home">
+                                    <button class="menu-btn">Home</button>
+                                </a>
+                            </li>
+                            <li class="wrapper-product-opt">
+                                <a href="products.html" title="Product">
+                                    <button class="menu-btn">Product
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-chevron-down">
+                                            <path d="m6 9 6 6 6-6" />
+                                        </svg>
+                                    </button>
+                                </a>
+                                <ul class="menu">
+                                    <a href="#" title="Love flower">
+                                        <li><button class="product-opt">Love flower</button></li>
+                                    </a>
+                                    <a href="#" title="Grand openning flower">
+                                        <li><button class="product-opt">Grand openning flower</button></li>
+                                    </a>
+                                    <a href="#" title="Wedding flower">
+                                        <li><button class="product-opt">Wedding flower</button></li>
+                                    </a>
+                                    <a href="#" title="Congrats flower">
+                                        <li><button class="product-opt">Congrats flower</button></li>
+                                    </a>
+                                    <a href="#" title="Condolence flower">
+                                        <li><button class="product-opt">Condolence flower</button></li>
+                                    </a>
+                                </ul>
+                            </li>
+                            <li><button class="menu-btn">About</button></li>
+                            <li><button class="menu-btn">Contact us</button></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <div class="container-icon-btn">
+                <nav class="navbar-icon-btn">
+                    <div class="wrapper-search-bar" title="Search">
+                        <div class="search-bar">
+                            <button onclick="showSearchBox()">
+                                <p class="search-title">Search...</p>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="cart-icon" title="Cart" onclick="toggleCart()">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 25 22"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                                <circle cx="8" cy="21" r="1" />
+                                <circle cx="19" cy="21" r="1" />
+                                <path
+                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                            </svg>
+                        </a>
+                        <span class="cart-badge">0</span>
+                    </div>
+                    <a href="login.html" class="login-btn" title="Login">Login</a>
+                </nav>
+                <div id="overlay" class="overlay" onclick="hideSearchBox()"></div>
+                <div id="search-box" class="search-box">
+                    <span class="close" onclick="hideSearchBox()">&times;</span>
+                    <h2>Search for a product</h2>
+                    <p>Search for flowers in the product catalog</p>
+                    <input type="text" id="search-input" placeholder="Search..." onkeyup="searchProducts()">
+                    <div id="search-results"></div>
+                </div>
+                <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+                <div id="cart" class="cart">
+                    <span class="close" onclick="toggleCart()">&times;</span>
+                    <h2>Cart</h2>
+                    <div class="cart-content">
+                        <div class="free-shipping">Free shipping on all orders over $25</div>
+                        <div class="cart-items">
+                            <p>Your cart is empty.</p>
+                        </div>
+                        <a href="products.html"><button class="start-shopping-btn">Start shopping</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="wrapper-main-content">
+            <div class="container-product-details">
+                <div class="container-img">
+                    <div class="wrapper-img">
+                        <img src="/public/image/rose.jpg" alt="Rose-flower">
+                    </div>
+                </div>
+                <div class="container-product-info">
+                    <div class="wrapper-product-title">
+                        <h2 class="product-name">Tulip flower</h2>
+                        <p class="product-price">30$</p>
+                        <p class="product-link">Available at <a href="products.html">Hoa Viet</a></p>
+                    </div>
+                    <div class="divide-line"></div>
+                    <p class="stock-quantity">30 in stock</p>
+                    <div class="container-product-reviews">
+                        <div class="wrapper-product-reviews">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-star">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-star">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-star">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-star">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-star">
+                                <polygon
+                                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                            </svg>
+                        </div>
+                        <button class="like-product-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-heart">
+                                <path
+                                    d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <form class="product-actions-container">
+                        <div class="container-quantity-product">
+                            <button class="remove-items">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-minus">
+                                    <path d="M5 12h14" />
+                                </svg>
+                            </button>
+                            <div class="quantity-product">
+                                <input type="number">
+                            </div>
+                            <button class="add-items">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="lucide lucide-plus">
+                                    <path d="M5 12h14" />
+                                    <path d="M12 5v14" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="wrapper-add-product">
+                            <button class="buy-product">Buy now</button>
+                            <button class="add-to-cart">Add to cart</button>
+                        </div>
+                    </form>
+                    <div class="divide-line"></div>
+                    <div class="container-description-product">
+                        <div class="wrapper-description-product">
+                            <h3 class="prodcut-title">
+                                <button class="description-btn">Description
+                                </button>
+                            </h3>
+                            <div class="container-description">
+                                <div class="description-product">Tulips, a flower famous for its elegant beauty and
+                                    vibrant colors, originate from Central Asia and are widely popular in the
+                                    Netherlands. Tulips are known for their diversity of colors, each with a unique
+                                    meaning. Red tulips symbolize deep and sincere love, while yellow tulips represent
+                                    joy and sunlight. White tulips symbolize purity and gratitude, while pink tulips
+                                    represent care and gentle affection. In addition, tulips represent perfection and
+                                    rebirth and are often given as gifts in spring as a symbol of new beginnings and
+                                    hope.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-product-recommend">
+                <h2 class="recommend-title">Related products</h2>
+                <div class="wrapper-product-recommend">
+                    <div class="container-relate-product">
+                        <div class="wrapper-relate-product">
+                            <div class="relate-product">
+                                <div class="product-card-details">
+                                    <a href="#">
+                                        <div class="container-img-products">
+                                            <div class="product-card-img">
+                                                <div class="card-img">
+                                                    <div class="img-detail">
+                                                        <img src="/public/image/Hydrangea.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="products-card-name">
+                                            <h3 class="product-card-title">Tulip Flower</h3>
+                                            <p class="products-card-price">$100</p>
+                                        </div>
+                                    </a>
+                                    <div class="container-action-products">
+                                        <div class="product-card-action">
+                                            <button title="Add product">Add to cart</button>
+                                            <a href="#" title="Preview" class="quick-view" data-name="Tulip Flower"
+                                                data-price="$100" data-description="Lorem ipsum dolor sit amet..."
+                                                data-image="../../public/image/tulip-type.jpg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-eye">
+                                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
+                                    <div id="product-details" class="product-details">
+                                        <span class="close" onclick="hideProductDetails()">&times;</span>
+                                        <div class="product-content">
+                                            <img id="product-image" src="#" alt="Product Image">
+                                            <div class="product-info">
+                                                <h2 id="product-name"></h2>
+                                                <p id="product-price"></p>
+                                                <a href="detail-product.html"><button class="view-product-btn">View
+                                                        Product</button></a>
+                                                <p id="product-description"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card-details">
+                                    <a href="#">
+                                        <div class="container-img-products">
+                                            <div class="product-card-img">
+                                                <div class="card-img">
+                                                    <div class="img-detail">
+                                                        <img src="/public/image/Hydrangea.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="products-card-name">
+                                            <h3 class="product-card-title">Tulip Flower</h3>
+                                            <p class="products-card-price">$100</p>
+                                        </div>
+                                    </a>
+                                    <div class="container-action-products">
+                                        <div class="product-card-action">
+                                            <button title="Add product">Add to cart</button>
+                                            <a href="#" title="Preview" class="quick-view" data-name="Tulip Flower"
+                                                data-price="$100" data-description="Lorem ipsum dolor sit amet..."
+                                                data-image="/public/image/tulip-type.jpg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-eye">
+                                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
+                                    <div id="product-details" class="product-details">
+                                        <span class="close" onclick="hideProductDetails()">&times;</span>
+                                        <div class="product-content">
+                                            <img id="product-image" src="#" alt="Product Image">
+                                            <div class="product-info">
+                                                <h2 id="product-name"></h2>
+                                                <p id="product-price"></p>
+                                                <a href="detail-product.html"><button class="view-product-btn">View
+                                                        Product</button></a>
+                                                <p id="product-description"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card-details">
+                                    <a href="#">
+                                        <div class="container-img-products">
+                                            <div class="product-card-img">
+                                                <div class="card-img">
+                                                    <div class="img-detail">
+                                                        <img src="/public/image/Hydrangea.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="products-card-name">
+                                            <h3 class="product-card-title">Tulip Flower</h3>
+                                            <p class="products-card-price">$100</p>
+                                        </div>
+                                    </a>
+                                    <div class="container-action-products">
+                                        <div class="product-card-action">
+                                            <button title="Add product">Add to cart</button>
+                                            <a href="#" title="Preview" class="quick-view" data-name="Tulip Flower"
+                                                data-price="$100" data-description="Lorem ipsum dolor sit amet..."
+                                                data-image="/public/image/tulip-type.jpg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-eye">
+                                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
+                                    <div id="product-details" class="product-details">
+                                        <span class="close" onclick="hideProductDetails()">&times;</span>
+                                        <div class="product-content">
+                                            <img id="product-image" src="#" alt="Product Image">
+                                            <div class="product-info">
+                                                <h2 id="product-name"></h2>
+                                                <p id="product-price"></p>
+                                                <a href="detail-product.html"><button class="view-product-btn">View
+                                                        Product</button></a>
+                                                <p id="product-description"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card-details">
+                                    <a href="#">
+                                        <div class="container-img-products">
+                                            <div class="product-card-img">
+                                                <div class="card-img">
+                                                    <div class="img-detail">
+                                                        <img src="/public/image/Hydrangea.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="products-card-name">
+                                            <h3 class="product-card-title">Tulip Flower</h3>
+                                            <p class="products-card-price">$100</p>
+                                        </div>
+                                    </a>
+                                    <div class="container-action-products">
+                                        <div class="product-card-action">
+                                            <button title="Add product">Add to cart</button>
+                                            <a href="#" title="Preview" class="quick-view" data-name="Tulip Flower"
+                                                data-price="$100" data-description="Lorem ipsum dolor sit amet..."
+                                                data-image="/public/image/tulip-type.jpg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-eye">
+                                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
+                                    <div id="product-details" class="product-details">
+                                        <span class="close" onclick="hideProductDetails()">&times;</span>
+                                        <div class="product-content">
+                                            <img id="product-image" src="#" alt="Product Image">
+                                            <div class="product-info">
+                                                <h2 id="product-name"></h2>
+                                                <p id="product-price"></p>
+                                                <a href="detail-product.html"><button class="view-product-btn">View
+                                                        Product</button></a>
+                                                <p id="product-description"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-card-details">
+                                    <a href="#">
+                                        <div class="container-img-products">
+                                            <div class="product-card-img">
+                                                <div class="card-img">
+                                                    <div class="img-detail">
+                                                        <img src="/public/image/Hydrangea.jpg" alt="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="products-card-name">
+                                            <h3 class="product-card-title">Tulip Flower</h3>
+                                            <p class="products-card-price">$100</p>
+                                        </div>
+                                    </a>
+                                    <div class="container-action-products">
+                                        <div class="product-card-action">
+                                            <button title="Add product">Add to cart</button>
+                                            <a href="#" title="Preview" class="quick-view" data-name="Tulip Flower"
+                                                data-price="$100" data-description="Lorem ipsum dolor sit amet..."
+                                                data-image="/public/image/tulip-type.jpg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide lucide-eye">
+                                                    <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                                                    <circle cx="12" cy="12" r="3" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
+                                    <div id="product-details" class="product-details">
+                                        <span class="close" onclick="hideProductDetails()">&times;</span>
+                                        <div class="product-content">
+                                            <img id="product-image" src="#" alt="Product Image">
+                                            <div class="product-info">
+                                                <h2 id="product-name"></h2>
+                                                <p id="product-price"></p>
+                                                <a href="detail-product.html"><button class="view-product-btn">View
+                                                        Product</button></a>
+                                                <p id="product-description"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-info-contact">
+        <section class="container-info-contact">
+            <section class="wrapper-info-contact">
+                <section class="logo-brand">
+                    <a href="index.html">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-flower">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5" />
+                            <path d="M12 7.5V9" />
+                            <path d="M7.5 12H9" />
+                            <path d="M16.5 12H15" />
+                            <path d="M12 16.5V15" />
+                            <path d="m8 8 1.88 1.88" />
+                            <path d="M14.12 9.88 16 8" />
+                            <path d="m8 16 1.88-1.88" />
+                            <path d="M14.12 14.12 16 16" />
+                        </svg>
+                        <span class="logo-name">HoaViet</span>
+                    </a>
+                    <div class="info-contact">
+                        <p>Hotline: 0123456789 - 0987654321<br>Email: hoaviet@gmail.com</p>
+                    </div>
+                </section>
+                <section class="wrapper-info">
+                    <div class="support-info">
+                        <h4>Customer Services</h4>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Why should you choose HoaViet.com?</a></li>
+                        </ul>
+                    </div>
+                    <div class="support-info">
+                        <h4>Follow</h4>
+                        <ul>
+                            <li>
+                                <a href="#">Facebook</a>
+                            </li>
+                            <li><a href="">Instagram</a></li>
+                            <!-- <li><a href="">Terms</a></li>
+                            <li><a href="">Why should you choose HoaViet.com?</a></li> -->
+                        </ul>
+                    </div>
+                    <div class="support-info">
+                        <h4>Shop HoaViet</h4>
+                        <ul>
+                            <li>
+                                <span class="support-info-title">Main Store:</span>
+                                <a href="https://www.google.com/maps/place/90+%C4%90.+L%C3%AA+H%E1%BB%93ng+Phong,+Ph%C6%B0%E1%BB%9Dng+2,+Qu%E1%BA%ADn+5,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.7565848,106.6758417,17z/data=!3m1!4b1!4m6!3m5!1s0x31752f02c341f1ed:0x2e580352bffe9146!8m2!3d10.7565848!4d106.6784166!16s%2Fg%2F11c22bz4td?entry=ttu"
+                                    target="_blank">90 Le Hong Phong Street, Ward 2, District 5, Ho Chi Minh City</a>
+                            </li>
+                            <!-- <li><a href="">Contact</a></li>
+                            <li><a href="">Terms</a></li>
+                            <li><a href="">Why should you choose HoaViet.com?</a></li> -->
+                        </ul>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </footer>
+    <script src="/src/scripts/user/index.js"></script>
+    <script src="/src/scripts/user/quickViews.js"></script>
+    <script src="/src/scripts/user/animation.js"></script>
+    <script src="/src/scripts/user/quantityProducts.js"></script>
+    <script src="/src/scripts/user/description-toggle.js"></script>
+    <script src="/src/scripts/shared/search.js"></script>
+</body>
+
+</html>
