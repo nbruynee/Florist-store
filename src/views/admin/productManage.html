@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/admin/productManage.css">
+    <link rel="shortcut icon" href="/public/flower-icon.png" type="image/x-icon">
+    <title>Product Manage</title>
+</head>
+
+<body>
+    <header class="hd-navbar">
+        <nav class="container-logo-opt">
+            <div class="wrapper-logo-opt">
+                <div class="wrapper-logo">
+                    <a class="logo-link" href="dashboard.html" title="Dashboard">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-flower">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5" />
+                            <path d="M12 7.5V9" />
+                            <path d="M7.5 12H9" />
+                            <path d="M16.5 12H15" />
+                            <path d="M12 16.5V15" />
+                            <path d="m8 8 1.88 1.88" />
+                            <path d="M14.12 9.88 16 8" />
+                            <path d="m8 16 1.88-1.88" />
+                            <path d="M14.12 14.12 16 16" />
+                        </svg>
+                        <span class="brand-name">HoaViet</span>
+                    </a>
+                </div>
+            </div>
+            <div class="wrapper-opt">
+                <ul class="otp-menu">
+                    <li class="container-search-bar">
+                        <div class="wrapper-search-bar" title="Search">
+                            <div class="search-bar">
+                                <button onclick="showSearchBox()">
+                                    <p class="search-title">Search...</p>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-search">
+                                        <circle cx="11" cy="11" r="8" />
+                                        <path d="m21 21-4.3-4.3" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="container-notify-icon">
+                        <a class="notify-icon" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                            </svg>
+                        </a>
+                        <span class="quantity-notify">5</span>
+                    </li>
+                    <li class="container-info-user">
+                        <a class="info-user" href="#">
+                            <!-- <img src="" alt=""> -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-circle-user-round">
+                                <path d="M18 20a6 6 0 0 0-12 0" />
+                                <circle cx="12" cy="10" r="4" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg>
+                        </a>
+                        <!-- <div class="dropdown-opt">
+                            <a href=""></a>
+                        </div> -->
+                    </li>
+                </ul>
+            </div>
+            <div id="overlay" class="overlay" onclick="hideSearchBox()"></div>
+            <div id="search-box" class="search-box">
+                <span class="close" onclick="hideSearchBox()">&times;</span>
+                <h2>Search for a product</h2>
+                <p>Search for flowers in the product catalog</p>
+                <input type="text" id="search-input" placeholder="Search..." onkeyup="searchProducts()">
+                <div id="search-results"></div>
+            </div>
+        </nav>
+    </header>
+    <aside class="left-sidebar">
+        <div class="sidebar-wrapper">
+            <nav class="sidebar-nav">
+                <ul class="wrapper-sidebar-nav">
+                    <li class="sidebar-items">
+                        <a class="sidebar-link" href="dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-house">
+                                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="divide-side"></li>
+                    <li class="sidebar-cap">
+                        <span>Manage</span>
+                    </li>
+                    <li class="sidebar-items">
+                        <a class="sidebar-link" href="productManage.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                                <circle cx="8" cy="21" r="1" />
+                                <circle cx="19" cy="21" r="1" />
+                                <path
+                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                            </svg>
+                            <span>Product</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-items">
+                        <a class="sidebar-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span>User</span>
+                        </a>
+                    </li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <div class="dashboard-container">
+        <div class="dashboard-wrapper">
+            <div class="container-dashboard-header">
+                <div class="wrapper-dashboard-header">
+                    <div class="dashboard-title-wrapper">
+                        <div class="dashboard-title">
+                            <h3>Product Management</h3>
+                            <p>Organize and optimize product catalog to enhance customer experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-table">
+                <div class="wrapper-table">
+                    <div class="container-bg-table">
+                        <div class="wrapper-bg-table">
+                            <div class="wrapper-bg-outer">
+                                <div class="wrapper-bg-inner">
+                                    <div class="container-box">
+                                        <table class="container-data">
+                                            <thead>
+                                                <tr>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Image</th>
+                                                    <th>Category</th>
+                                                    <th>Price</th>
+                                                    <th title="Quantity">Quantity</th>
+                                                    <th title="Status">Status</th>
+                                                    <th>Description</th>
+                                                    <th>Date Added</th>
+                                                    <th>Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>001</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="../../public/image/rose.jpg" alt="Rose" width="50"
+                                                            height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>002</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>003</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>003</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>003</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>003</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>003</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>003</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>003</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>003</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>003</td>
+                                                    <td>Rose Bouquet</td>
+                                                    <td><img src="rose.jpg" alt="Rose" width="50" height="50"></td>
+                                                    <td>Fresh Flowers</td>
+                                                    <td>$30</td>
+                                                    <td>50</td>
+                                                    <td>In Stock</td>
+                                                    <td>A beautiful bouquet of fresh roses.</td>
+                                                    <td>2024-10-10</td>
+                                                    <td>
+                                                        <button class="btn-edit">Edit</button>
+                                                        <button class="btn-delete">Delete</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="container-pagination">
+                                            <div class="pagination-wrapper">
+                                                <a href="#">
+                                                    <button class="prev-btn" onclick="changePage(-1)">Prev</button>
+                                                </a>
+                                                <div id="pagination-numbers" class="pagination-item">
+                                                </div>
+                                                <a href="#">
+                                                    <button class="next-btn" onclick="changePage(1)">Next</button>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/src/scripts/admin/manage.js"></script>
+    <script src="/src/scripts/shared/search.js"></script>
+    <script src="/src/scripts/shared/paginations.js"></script>
+</body>
+</html>
