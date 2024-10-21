@@ -33,6 +33,32 @@ body {
     letter-spacing: -0.025rem;
 }
 
+.background-outside  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.background-outside img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1;  
+}
+
+.background-dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 0;
+}
+
 .container-login-page {
     position: relative;
     display: grid;
@@ -47,6 +73,7 @@ body {
     justify-content: center;
     overflow: hidden;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    z-index: 1;
 }
 
 .container-login-page .main-login-page {
@@ -74,7 +101,7 @@ body {
 .login-container .wrapper-login{
     min-height: 28.75rem;
     color: rgb(33, 37, 41);
-    background-color: transparent;
+    background-color: rgb(233, 236, 239);
     border: 1px solid rgb(173, 181, 189);
     border-radius: .75rem;
 }
@@ -180,7 +207,7 @@ body {
 
 .wrapper-continue-text .continue-text {
     color: rgb(52, 58, 64) !important;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(233, 236, 239);
     padding-left: .5rem;
     padding-right: .5rem;
 }
@@ -345,7 +372,7 @@ body {
 
 .container-login-img .gradient-overlay {
     position: absolute;
-    background: linear-gradient(to bottom, rgba(73, 80, 87, 0.1), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(to bottom, rgba(73, 80, 87, 0.1), rgba(0, 0, 0, 0.3));
     border-radius: 10px;
     inset: 0;
 }

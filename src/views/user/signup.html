@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../public/flower-icon.png">
-    <link rel="stylesheet" href="../src/style/signup.css">
+    <link rel="icon" type="image/x-icon" href="/public/flower-icon.png">
+    <link rel="stylesheet" href="/src/styles/user/signup.css">
     <title>Sign up - HoaViet</title>
 </head>
 <body>
@@ -19,9 +19,15 @@
         </svg>
         <span class="brand-name">HoaViet</span>
     </a>
+    <div class="container-background-outside">
+        <div class="background-outside">
+            <img src="/public/image/background-signup.jpg">
+        </div>
+        <div class="background-dark-overlay"></div>
+    </div>
     <div class="container-signup-page">
         <div class="container-signup-img">
-            <img src="../public/signup-img.jpg" title="flower">
+            <img src="/public/signup-img.jpg" title="flower">
             <div class="gradient-overlay"></div>       
         </div>
         <main class="main-signup-page">
@@ -59,6 +65,10 @@
                             </div>
                         </div>
                         <form class="container-signup-field">
+                            <div class="wrapper-input-user">
+                                <label class="user-text" for="user-field">User Name</label>
+                                <input class="input-user-field" type="text" placeholder="Duong" name="email">
+                            </div>
                             <div class="wrapper-input-email">
                                 <label class="email-text" for="email-field">Email</label>
                                 <input class="input-email-field" type="text" placeholder="abc@gmail.com" name="email">
