@@ -98,29 +98,29 @@
                     </div>
                     <a href="login.html" class="login-btn" title="Login">Login</a>
                 </nav>
-                <div id="overlay" class="overlay" onclick="hideSearchBox()"></div>
-                <div id="search-box" class="search-box">
-                    <span class="close" onclick="hideSearchBox()">&times;</span>
-                    <h2>Search for a product</h2>
-                    <p>Search for flowers in the product catalog</p>
-                    <input type="text" id="search-input" placeholder="Search..." onkeyup="searchProducts()">
-                    <div id="search-results"></div>
-                </div>
-                <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
-                <div id="cart" class="cart">
-                    <span class="close" onclick="toggleCart()">&times;</span>
-                    <h2>Cart</h2>
-                    <div class="cart-content">
-                        <div class="free-shipping">Free shipping on all orders over $25</div>
-                        <div class="cart-items">
-                            <p>Your cart is empty.</p>
-                        </div>
-                        <a href="products.html"><button class="start-shopping-btn">Start shopping</button></a>
-                    </div>
-                </div>
             </div>
         </div>
     </header>
+    <div id="search-overlay" class="search-overlay" onclick="hideSearchBox()"></div>
+    <div id="search-box" class="search-box">
+        <span class="close" onclick="hideSearchBox()">&times;</span>
+        <h2>Search for a product</h2>
+        <p>Search for flowers in the product catalog</p>
+        <input type="text" id="search-input" placeholder="Search..." onkeyup="searchProducts()">
+        <div id="search-results"></div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay" onclick="toggleCart()"></div>
+    <div id="cart" class="cart">
+        <span class="close" onclick="toggleCart()">&times;</span>
+        <h2>Cart</h2>
+        <div class="cart-content">
+            <div class="free-shipping">Free shipping on all orders over $25</div>
+            <div class="cart-items">
+                <p>Your cart is empty.</p>
+            </div>
+            <a href="products.html"><button class="start-shopping-btn">Start shopping</button></a>
+        </div>
+    </div>
     <main class="main-content">
         <section class="container-main-content">
             <div class="container-title">
@@ -227,17 +227,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
+                        <div class="wrapper-product-items">
+                            <div class="items-detail">
+                                <a href="detail-product.html">
+                                    <div class="items-img">
+                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
+                                    </div>
+                                </a>
+                                <a href="detail-product.html">
+                                    <p class="items-name">Rose flower</p>
+                                    <p class="items-price">30$</p>
+                                </a>
+                                <div class="items-action">
+                                    <a href="#">
+                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
+                                            data-description="A beautiful rose flower."
+                                            data-image="/public/image/rose.jpg">
+                                            <span>Quick View</span>
+                                        </button>
+                                    </a>
+                                    <div class="add-to-cart-items">
+                                        <button class="add-to-cart-btn">Add to card</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -266,17 +277,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
+                        <div class="wrapper-product-items">
+                            <div class="items-detail">
+                                <a href="detail-product.html">
+                                    <div class="items-img">
+                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
+                                    </div>
+                                </a>
+                                <a href="detail-product.html">
+                                    <p class="items-name">Rose flower</p>
+                                    <p class="items-price">30$</p>
+                                </a>
+                                <div class="items-action">
+                                    <a href="#">
+                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
+                                            data-description="A beautiful rose flower."
+                                            data-image="/public/image/rose.jpg">
+                                            <span>Quick View</span>
+                                        </button>
+                                    </a>
+                                    <div class="add-to-cart-items">
+                                        <button class="add-to-cart-btn">Add to card</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -305,17 +327,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
+                        <div class="wrapper-product-items">
+                            <div class="items-detail">
+                                <a href="detail-product.html">
+                                    <div class="items-img">
+                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
+                                    </div>
+                                </a>
+                                <a href="detail-product.html">
+                                    <p class="items-name">Rose flower</p>
+                                    <p class="items-price">30$</p>
+                                </a>
+                                <div class="items-action">
+                                    <a href="#">
+                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
+                                            data-description="A beautiful rose flower."
+                                            data-image="/public/image/rose.jpg">
+                                            <span>Quick View</span>
+                                        </button>
+                                    </a>
+                                    <div class="add-to-cart-items">
+                                        <button class="add-to-cart-btn">Add to card</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -344,17 +377,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
+                        <div class="wrapper-product-items">
+                            <div class="items-detail">
+                                <a href="detail-product.html">
+                                    <div class="items-img">
+                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
+                                    </div>
+                                </a>
+                                <a href="detail-product.html">
+                                    <p class="items-name">Rose flower</p>
+                                    <p class="items-price">30$</p>
+                                </a>
+                                <div class="items-action">
+                                    <a href="#">
+                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
+                                            data-description="A beautiful rose flower."
+                                            data-image="/public/image/rose.jpg">
+                                            <span>Quick View</span>
+                                        </button>
+                                    </a>
+                                    <div class="add-to-cart-items">
+                                        <button class="add-to-cart-btn">Add to card</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -383,17 +427,28 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
+                        <div class="wrapper-product-items">
+                            <div class="items-detail">
+                                <a href="detail-product.html">
+                                    <div class="items-img">
+                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
+                                    </div>
+                                </a>
+                                <a href="detail-product.html">
+                                    <p class="items-name">Rose flower</p>
+                                    <p class="items-price">30$</p>
+                                </a>
+                                <div class="items-action">
+                                    <a href="#">
+                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
+                                            data-description="A beautiful rose flower."
+                                            data-image="/public/image/rose.jpg">
+                                            <span>Quick View</span>
+                                        </button>
+                                    </a>
+                                    <div class="add-to-cart-items">
+                                        <button class="add-to-cart-btn">Add to card</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -422,20 +477,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
                         <div class="wrapper-product-items">
                             <div class="items-detail">
                                 <a href="detail-product.html">
@@ -461,20 +502,6 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
                         <div class="wrapper-product-items">
                             <div class="items-detail">
                                 <a href="detail-product.html">
@@ -497,332 +524,6 @@
                                     <div class="add-to-cart-items">
                                         <button class="add-to-cart-btn">Add to card</button>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrapper-product-items">
-                            <div class="items-detail">
-                                <a href="detail-product.html">
-                                    <div class="items-img">
-                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail-product.html">
-                                    <p class="items-name">Rose flower</p>
-                                    <p class="items-price">30$</p>
-                                </a>
-                                <div class="items-action">
-                                    <a href="#">
-                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
-                                            data-description="A beautiful rose flower."
-                                            data-image="/public/image/rose.jpg">
-                                            <span>Quick View</span>
-                                        </button>
-                                    </a>
-                                    <div class="add-to-cart-items">
-                                        <button class="add-to-cart-btn">Add to card</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrapper-product-items">
-                            <div class="items-detail">
-                                <a href="detail-product.html">
-                                    <div class="items-img">
-                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail-product.html">
-                                    <p class="items-name">Rose flower</p>
-                                    <p class="items-price">30$</p>
-                                </a>
-                                <div class="items-action">
-                                    <a href="#">
-                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
-                                            data-description="A beautiful rose flower."
-                                            data-image="/public/image/rose.jpg">
-                                            <span>Quick View</span>
-                                        </button>
-                                    </a>
-                                    <div class="add-to-cart-items">
-                                        <button class="add-to-cart-btn">Add to card</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrapper-product-items">
-                            <div class="items-detail">
-                                <a href="detail-product.html">
-                                    <div class="items-img">
-                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail-product.html">
-                                    <p class="items-name">Rose flower</p>
-                                    <p class="items-price">30$</p>
-                                </a>
-                                <div class="items-action">
-                                    <a href="#">
-                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
-                                            data-description="A beautiful rose flower."
-                                            data-image="/public/image/rose.jpg">
-                                            <span>Quick View</span>
-                                        </button>
-                                    </a>
-                                    <div class="add-to-cart-items">
-                                        <button class="add-to-cart-btn">Add to card</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrapper-product-items">
-                            <div class="items-detail">
-                                <a href="detail-product.html">
-                                    <div class="items-img">
-                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail-product.html">
-                                    <p class="items-name">Rose flower</p>
-                                    <p class="items-price">30$</p>
-                                </a>
-                                <div class="items-action">
-                                    <a href="#">
-                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
-                                            data-description="A beautiful rose flower."
-                                            data-image="/public/image/rose.jpg">
-                                            <span>Quick View</span>
-                                        </button>
-                                    </a>
-                                    <div class="add-to-cart-items">
-                                        <button class="add-to-cart-btn">Add to card</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrapper-product-items">
-                            <div class="items-detail">
-                                <a href="detail-product.html">
-                                    <div class="items-img">
-                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail-product.html">
-                                    <p class="items-name">Rose flower</p>
-                                    <p class="items-price">30$</p>
-                                </a>
-                                <div class="items-action">
-                                    <a href="#">
-                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
-                                            data-description="A beautiful rose flower."
-                                            data-image="/public/image/rose.jpg">
-                                            <span>Quick View</span>
-                                        </button>
-                                    </a>
-                                    <div class="add-to-cart-items">
-                                        <button class="add-to-cart-btn">Add to card</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrapper-product-items">
-                            <div class="items-detail">
-                                <a href="detail-product.html">
-                                    <div class="items-img">
-                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail-product.html">
-                                    <p class="items-name">Rose flower</p>
-                                    <p class="items-price">30$</p>
-                                </a>
-                                <div class="items-action">
-                                    <a href="#">
-                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
-                                            data-description="A beautiful rose flower."
-                                            data-image="/public/image/rose.jpg">
-                                            <span>Quick View</span>
-                                        </button>
-                                    </a>
-                                    <div class="add-to-cart-items">
-                                        <button class="add-to-cart-btn">Add to card</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrapper-product-items">
-                            <div class="items-detail">
-                                <a href="detail-product.html">
-                                    <div class="items-img">
-                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail-product.html">
-                                    <p class="items-name">Rose flower</p>
-                                    <p class="items-price">30$</p>
-                                </a>
-                                <div class="items-action">
-                                    <a href="#">
-                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
-                                            data-description="A beautiful rose flower."
-                                            data-image="/public/image/rose.jpg">
-                                            <span>Quick View</span>
-                                        </button>
-                                    </a>
-                                    <div class="add-to-cart-items">
-                                        <button class="add-to-cart-btn">Add to card</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="wrapper-product-items">
-                            <div class="items-detail">
-                                <a href="detail-product.html">
-                                    <div class="items-img">
-                                        <img src="/public/image/rose.jpg" alt="rose.jpg">
-                                    </div>
-                                </a>
-                                <a href="detail-product.html">
-                                    <p class="items-name">Rose flower</p>
-                                    <p class="items-price">30$</p>
-                                </a>
-                                <div class="items-action">
-                                    <a href="#">
-                                        <button class="quick-view-btn" data-name="Rose flower" data-price="$30"
-                                            data-description="A beautiful rose flower."
-                                            data-image="/public/image/rose.jpg">
-                                            <span>Quick View</span>
-                                        </button>
-                                    </a>
-                                    <div class="add-to-cart-items">
-                                        <button class="add-to-cart-btn">Add to card</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="overlay" class="overlay" onclick="hideProductDetails()"></div>
-                        <div id="product-details" class="product-details">
-                            <span class="close" onclick="hideProductDetails()">&times;</span>
-                            <div class="product-content">
-                                <img id="product-image" src="" alt="Product Image">
-                                <div class="product-info">
-                                    <h2 id="product-name"></h2>
-                                    <p id="product-price"></p>
-                                    <a href="detail-product.html"><button class="view-product-btn">View
-                                            Product</button></a>
-                                    <p id="product-description"></p>
                                 </div>
                             </div>
                         </div>
@@ -839,6 +540,20 @@
                             </div>
                         </div>
                     </div>
+                    <div id="product-overlay" class="product-overlay" onclick="hideProductDetails()"></div>
+                        <div id="product-details" class="product-details">
+                            <span class="close" onclick="hideProductDetails()">&times;</span>
+                            <div class="product-content">
+                                <img id="product-image" src="" alt="Product Image">
+                                <div class="product-info">
+                                    <h2 id="product-name"></h2>
+                                    <p id="product-price"></p>
+                                    <a href="detail-product.html"><button class="view-product-btn">View
+                                            Product</button></a>
+                                    <p id="product-description"></p>
+                                </div>
+                            </div>
+                        </div>
                 </div>
             </div>
         </section>
@@ -898,9 +613,6 @@
                                 <a href="https://www.google.com/maps/place/90+%C4%90.+L%C3%AA+H%E1%BB%93ng+Phong,+Ph%C6%B0%E1%BB%9Dng+2,+Qu%E1%BA%ADn+5,+Th%C3%A0nh+ph%E1%BB%91+H%E1%BB%93+Ch%C3%AD+Minh,+Vi%E1%BB%87t+Nam/@10.7565848,106.6758417,17z/data=!3m1!4b1!4m6!3m5!1s0x31752f02c341f1ed:0x2e580352bffe9146!8m2!3d10.7565848!4d106.6784166!16s%2Fg%2F11c22bz4td?entry=ttu"
                                     target="_blank">90 Le Hong Phong Street, Ward 2, District 5, Ho Chi Minh City</a>
                             </li>
-                            <!-- <li><a href="">Contact</a></li>
-                            <li><a href="">Terms</a></li>
-                            <li><a href="">Why should you choose HoaViet.com?</a></li> -->
                         </ul>
                     </div>
                 </section>

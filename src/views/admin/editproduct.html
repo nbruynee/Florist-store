@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/src/styles/admin/editProduct.css">
+    <link rel="shortcut icon" href="/public/flower-icon.png" type="image/x-icon">
+    <title>Edit Product</title>
+</head>
+
+<body>
+    <header class="hd-navbar">
+        <nav class="container-logo-opt">
+            <div class="wrapper-logo-opt">
+                <div class="wrapper-logo">
+                    <a class="logo-link" href="dashboard.html" title="Dashboard">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-flower">
+                            <circle cx="12" cy="12" r="3" />
+                            <path
+                                d="M12 16.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 1 1 12 7.5a4.5 4.5 0 1 1 4.5 4.5 4.5 4.5 0 1 1-4.5 4.5" />
+                            <path d="M12 7.5V9" />
+                            <path d="M7.5 12H9" />
+                            <path d="M16.5 12H15" />
+                            <path d="M12 16.5V15" />
+                            <path d="m8 8 1.88 1.88" />
+                            <path d="M14.12 9.88 16 8" />
+                            <path d="m8 16 1.88-1.88" />
+                            <path d="M14.12 14.12 16 16" />
+                        </svg>
+                        <span class="brand-name">HoaViet</span>
+                    </a>
+                </div>
+            </div>
+            <div class="wrapper-opt">
+                <ul class="otp-menu">
+                    <li class="container-notify-icon">
+                        <a class="notify-icon" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-bell">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                            </svg>
+                        </a>
+                        <span class="quantity-notify">5</span>
+                    </li>
+                    <li class="container-info-user">
+                        <a class="info-user" href="javascript:void(0)" onclick="toggleDropdown()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-circle-user-round">
+                                <path d="M18 20a6 6 0 0 0-12 0" />
+                                <circle cx="12" cy="10" r="4" />
+                                <circle cx="12" cy="12" r="10" />
+                            </svg>
+                        </a>
+                        <div class="container-dropdown-opt">
+                            <div class="dropdown-opt" id="dropdownMenu">
+                                <div class="wrapper-dropdown-opt">
+                                    <a href="#">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user">
+                                            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                            <circle cx="12" cy="7" r="4" />
+                                        </svg>
+                                        <span>View Profile</span>
+                                    </a>
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bell">
+                                            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+                                            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+                                        </svg>
+                                        <span>Notifications</span>
+                                    </a>
+                                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round"
+                                            class="lucide lucide-log-out">
+                                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                                            <polyline points="16 17 21 12 16 7" />
+                                            <line x1="21" x2="9" y1="12" y2="12" />
+                                        </svg>
+                                        <span>Logout</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="left-sidebar">
+        <div class="sidebar-wrapper">
+            <nav class="sidebar-nav">
+                <ul class="wrapper-sidebar-nav">
+                    <li class="sidebar-items">
+                        <a class="sidebar-link" href="dashboard.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-house">
+                                <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
+                                <path
+                                    d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                            </svg>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="divide-side"></li>
+                    <li class="sidebar-cap">
+                        <span>Manage</span>
+                    </li>
+                    <li class="sidebar-items">
+                        <a class="sidebar-link" href="productManage.html">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-shopping-cart">
+                                <circle cx="8" cy="21" r="1" />
+                                <circle cx="19" cy="21" r="1" />
+                                <path
+                                    d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+                            </svg>
+                            <span>Product</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-items">
+                        <a class="sidebar-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-user">
+                                <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+                                <circle cx="12" cy="7" r="4" />
+                            </svg>
+                            <span>User</span>
+                        </a>
+                    </li>
+                    <li></li>
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <div class="dashboard-container">
+        <div class="dashboard-wrapper">
+            <div class="container-dashboard-header">
+                <div class="wrapper-dashboard-header">
+                    <div class="dashboard-title-wrapper">
+                        <div class="dashboard-title">
+                            <h3>Edit Product Details</h3>
+                            <p>Update product information to keep your catalog accurate and up-to-date</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-table">
+                    <div class="wrapper-table">
+                        <div class="container-bg-table">
+                            <div class="wrapper-bg-table">
+                                <div class="wrapper-bg-outer">
+                                    <div class="wrapper-bg-inner">
+                                        <div class="container-box">
+                                            <form class="wrapper-box">
+                                                <div class="wrapper-edit-product">
+                                                    <label class="product-edit-title" for="id-field">Id Product</label>
+                                                    <input class="input-id-field" type="text">
+                                                </div>
+                                                <div class="wrapper-edit-product">
+                                                    <label class="product-edit-title" for="name-field">Name
+                                                        Product</label>
+                                                    <input class="input-name-field" type="text">
+                                                </div>
+                                                <div class="wrapper-edit-product">
+                                                    <label class="product-edit-title" for="price-field">Price
+                                                        Product</label>
+                                                    <input class="input-price-field" type="text">
+                                                </div>
+                                                <div class="wrapper-edit-product">
+                                                    <label class="product-edit-title" for="category-field">Category
+                                                        Product</label>
+                                                    <div class="wrapper-choose-category">
+                                                        <select name="choose-category" id="choose-category">
+                                                            <option value="#">Love Flower</option>
+                                                            <option value="#">Grand Opening Flower</option>
+                                                            <option value="#">Wedding Flower</option>
+                                                            <option value="#">Congrat Flower</option>
+                                                            <option value="#">Condolence Flower</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="wrapper-edit-product">
+                                                    <label class="product-edit-title" for="quantity-field">Quantity
+                                                        Product</label>
+                                                    <input class="input-quantity-field" type="text">
+                                                </div>
+                                                <div class="wrapper-edit-product">
+                                                    <label class="product-edit-title" for="status-field">Status
+                                                        Product</label>
+                                                    <input class="input-status-field" type="text">
+                                                </div>
+                                                <div class="wrapper-edit-product">
+                                                    <label class="product-edit-title"
+                                                        for="description-field">Description Product</label>
+                                                    <textarea name="description-review" id="description-review"></textarea>
+                                                </div>
+                                                <div class="wrapper-edit-product">
+                                                    <div class="header">
+                                                        <label class="product-edit-title" for="choose-img">Image Product</label>
+                                                        <button class="clear-btn" type="button" onclick="clearImages()">Clear All</button>
+                                                    </div>
+                                                    <div class="image-upload-container" ondblclick="openFileSelector()">
+                                                        <div id="preview-container">
+                                                            <p id="placeholder-text">Double-click to select images</p>
+                                                        </div>
+                                                    </div>
+                                                    <input type="file" id="choose-img" accept="image/*" multiple style="display: none;" onchange="previewImages(event)">
+                                                </div>
+                                            </form>
+                                            <div class="container-btn">
+                                                <div class="wrapper-btn">
+                                                    <button class="save-btn">Save</button>
+                                                </div>
+                                                <div class="wrapper-btn">
+                                                    <button class="cancel-btn">Cancel</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="/src/scripts/shared/toggleDropdown.js"></script>
+        <script src="/src/scripts/admin/imagePreview.js"></script>
+</body>
+
+</html>

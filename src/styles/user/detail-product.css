@@ -219,7 +219,7 @@ body {
     color: rgb(108, 117, 125) !important;
 }
 
-.container-icon-btn .overlay {
+.search-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -231,7 +231,7 @@ body {
     z-index: 999;
 }
 
-.container-icon-btn .search-box {
+.search-box {
     display: none;
     position: fixed;
     top: 48%;
@@ -267,7 +267,6 @@ body {
     right: 11px;
     cursor: pointer;
     font-size: 30px;
-    
 }
 
 .search-box input[type="text"] {
@@ -963,7 +962,7 @@ body {
     width: 1.3rem;
 }
 
-.product-card-details .overlay {
+.product-overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -975,7 +974,7 @@ body {
     z-index: 999;
 }
 
-.product-card-details .product-details {
+.product-details {
     display: none;
     position: fixed;
     width: 672px;

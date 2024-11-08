@@ -1,11 +1,11 @@
 //-----Assign click event to overlay to hide product details when clicking out-----//
-document.getElementById('overlay').addEventListener('click', function () {
+document.getElementById('search-overlay').addEventListener('click', function () {
     hideProductDetails();
 });
 
 //Function close modal(Quick view product)
 function hideProductDetails() {
-    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('search-overlay').style.display = 'none';
     document.getElementById('product-details').style.display = 'none';
 }
 

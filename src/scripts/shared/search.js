@@ -6,12 +6,12 @@ const products = [
 ];
 
 function showSearchBox() {
-    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('search-overlay').style.display = 'block';
     document.getElementById('search-box').style.display = 'block';
 }
 
 function hideSearchBox() {
-    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('search-overlay').style.display = 'none';
     document.getElementById('search-box').style.display = 'none';
 }
 
